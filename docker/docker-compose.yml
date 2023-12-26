@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  mysql:
+    container_name: e-commerce-mysql
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT}:3306
